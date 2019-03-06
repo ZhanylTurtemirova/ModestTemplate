@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quattrocento+Sans'}
     ]
   },
 
@@ -26,8 +27,9 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-  ],
+ css: [
+  '@/assets/scss/main.scss'
+],
 
   /*
   ** Plugins to load before mounting the App
@@ -40,7 +42,14 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-sass-resources-loader',
+  ],
+
+  sassResources: [
+    '@/assets/scss/abstracts/_functions.scss',
+    '@/assets/scss/abstracts/_mixins.scss',
+    '@/assets/scss/abstracts/_variables.scss',
   ],
   /*
   ** Axios module configuration
@@ -58,14 +67,14 @@ module.exports = {
     */
     extend(config, ctx) {
       // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+      // if (ctx.isDev && ctx.isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/          
+      //   })
+      // }
     }
   }
 }
