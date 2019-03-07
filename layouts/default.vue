@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style>
-html { 
+html {
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 10px;
   word-spacing: 1px;
@@ -34,5 +34,4 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
 </style>
