@@ -1,202 +1,147 @@
 <template>
-  <div class="c-banner">
-    <div class="c-banner__slider">
-      <transition name="fade">
-        <img 
-          v-if="curSlide=='first'"
-          class="c-banner__img" 
-          src="~/assets/images/banner_1.png" 
-          alt="bg-1">
-        <img 
-          v-if="curSlide=='second'"
-          class="c-banner__img" 
-          src="~/assets/images/banner_2.jpg" 
-          alt="bg-1">
-        <img 
-          v-if="curSlide=='third'"
-          class="c-banner__img" 
-          src="~/assets/images/banner_3.jpg" 
-          alt="bg-1">
-      </transition>  
-    </div>
-    
-    <div class="c-banner__info">
-      <h1 class="c-banner__title">Welcome to our marketplace</h1>
-      <p class="c-banner__text h-text-ellipsis"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique<br> ndolor non, ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue, vel sodales arcu vestibulum. Nunc lobortis dui magna, quis lacusullamcorper at. 
-      Phasellus sollicitudin ante eros ornare, sit amet luctus lorem semper. Suspendisse posuere, quamdictum consectetur, augue metus pharetra tellus, eu feugiatloreg egetnisi. Cras ornare bibendum ante, ut bibendum odio convallis eget. vel sodales arcu vestibulum</p>
-      <div class="c-baner__bottoms">
-        <nuxt-link 
-          to="/#about"
-          class="c-banner__link" 
-          @click="showMore">
-          View More
-        </nuxt-link>
-        <nuxt-link 
-          to="/#about"
-          class="c-banner__link" 
-          @click="showVideo">
-          Video Tour
-        </nuxt-link>
-      </div>
-    </div>
-    <div class="c-banner__pagination">
-      <span 
-        :class="{'c-banner__pagination-dot--active' : curSlide==='first'}" 
-        class="c-banner__pagination-dot"
-        @click.prevent = "currentSlide('first')"/>
-      <span 
-        :class="{'c-banner__pagination-dot--active' : curSlide==='second'}" 
-        class="c-banner__pagination-dot" 
-        @click.prevent= "currentSlide('second')"/>
-      <span 
-        :class="{'c-banner__pagination-dot--active' : curSlide==='third'}" 
-        class="c-banner__pagination-dot" 
-        @click.prevent= "currentSlide('third')"/>
-    </div>
+  <div class="c-about-wrapper">
+    <section class="c-about">
+      <h1 class="c-about__title">
+        We are Modest
+      </h1>
+      <div class="c-about__content">
+        <div class="c-about__content-left">
+          <p class="c-about__content-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non, ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue, vel sodales arcu vestibulum. Nunc lobortis dui magna, quis lacusullamcorper at. 
+          </p> 
+          <p class="c-about__content-paragraph">
+            Lorem ipsum dolor sit amet,<strong>consectetur adipiscing elit</strong> . Sed nisi metus, tristique ndolor non, ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue, vel sodales arcu vestibulum. Nunc lobortis dui magna, quis lacusullamcorper at. 
+          </p>
+          <div class="c-about__social">
+            <a 
+              href="" 
+              class="c-about__social-link">
+              <img 
+                src="" 
+                alt="" 
+                class="c-about__social-icon">
+            </a>
+          </div>
+        </div>
+        <div class="c-about__content-right c-article">
+          <div class="c-article__article">
+            <div class="c-article__right">
+              <p class="c-article__number">
+                01
+              </p>
+            </div>
+            <div class="c-article__left">
+              <h2 class="c-article__title">
+                Dedication to the customers
+              </h2>
+              <p class="c-article__text">
+                Integer vel lacus non dui ullamcorper venenatis. Aliquam vitae tristique nisi, vitae ullamcorper risus. Nam porttitor blandit ultricies.
+              </p>
+            </div>
+           
+          </div>
+          <div class="c-article__article">
+            <div class="c-article__right">
+              <p class="c-article__number">
+                02
+              </p>
+            </div>
+            <div class="c-article__left">
+              <h2 class="c-article__title">
+                Dedication to the customers
+              </h2>
+              <p class="c-article__text">
+                Integer vel lacus non dui ullamcorper venenatis. Aliquam vitae tristique nisi, vitae ullamcorper risus. Nam porttitor blandit ultricies.
+              </p>
+            </div>
+          </div>  
+          <div class="c-article__article">
+            <div class="c-article__right">
+              <p class="c-article__number">
+                03
+              </p>
+            </div>
+            <div class="c-article__left">
+              <h2 class="c-article__title">
+                Dedication to the customers
+              </h2>
+              <p class="c-article__text">
+                Integer vel lacus non dui ullamcorper venenatis. Aliquam vitae tristique nisi, vitae ullamcorper risus. Nam porttitor blandit ultricies.
+              </p>
+            </div>
+          </div>        
+        </div>
+    </div></section>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.c-banner {
-  z-index: 100;
-  width: 100%;
-  margin: 0;
-  background-color: #3a454d;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin: auto;
-  height: 100vh;
-
-  &__slider {
-    position: absolute;
-    margin: auto;
-    max-height: 66rem;
-    width: 100%;
+.c-about {
+  width: 80%;
+  margin: 4rem auto;
+  &__title {
+    color: #292f36;
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    border-left: 1rem solid #e1e6ea;
+    margin: 8rem 0;
   }
 
-  &__img {
-    object-fit: contain;
-    width: 100%;
-    height: 100vh;
-    animation-name: fade;
-    animation-duration: 1.5s;
-    // background-image: url('~/assets/images/banner_1.png');
-  }
-
-  &__info {
-    z-index: 1000;
-    width: 75%;
+  &__content {
+    margin-bottom: 4rem;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+  }
+
+  &__content-left,
+  &__content-right {
+    flex-basis: 45%;
+  }
+
+  &__content-paragraph {
+    color: #8d8f92;
+    font-family: 'Open Sans';
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.6rem;
+    margin-bottom: 1rem;
+  }
+}
+.c-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__article {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__number {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    color: white;
+    background: #23b7a4;
+    margin-right: 1rem;
   }
 
   &__title {
-    text-transform: uppercase;
-    font-size: 3.6rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 3.1rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
   }
 
   &__text {
-    width: 60%;
-    font-size: 1.6rem;
-    margin-bottom: 4.3rem;
-    line-height: 2.6rem;
+    color: #8d8f92;
     font-family: 'Open Sans';
-  }
-
-  &__link {
-    margin-right: 1.5rem;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    padding: 1.5rem 2rem;
-    border: 2px solid white;
-    border-radius: 0.3rem;
-
-    &:hover {
-      border-color: #23b7a4;
-      background-color: #23b7a4;
-    }
-  }
-
-  &__pagination {
-    z-index: 1000;
-    width: 5.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
-    margin-bottom: 15rem;
-  }
-
-  &__pagination-dot {
-    border: 2px solid white;
-    height: 0.9rem;
-    width: 0.9rem;
-    border-radius: 50%;
-
-    &:hover {
-      background: #23b7a4;
-      border-color: #23b7a4;
-    }
-
-    &--active {
-      background: #23b7a4;
-      border-color: #23b7a4;
-    }
-  }
-}
-
-.slide-fade-enter-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter,
-.slide-fade-leave-to {
-  opacity: 0;
-}
-
-.h-text-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.6rem;
+    margin-bottom: 1rem;
   }
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      curSlide: 'first'
-    }
-  },
-  methods: {
-    currentSlide(slide) {
-      console.log('slide')
-      this.curSlide = slide
-    },
-    showMore() {
-      console.log('show more')
-    },
-    showVideo() {
-      console.log('show video')
-    }
-  }
-}
-</script>

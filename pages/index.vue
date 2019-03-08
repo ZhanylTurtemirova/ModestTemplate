@@ -1,12 +1,17 @@
 <template>
-  <about/>
+  <div>
+    <banner/>
+    <about/>
+  </div> 
 </template>
 
 <script>
+import Banner from '~/components/Banner.vue'
 import About from '~/components/About.vue'
 
 export default {
   components: {
+    banner: Banner,
     about: About
   }
 }
