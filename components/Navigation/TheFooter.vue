@@ -6,21 +6,21 @@
         <li class="c-footer__social-item "><a 
           href="" 
           class="c-footer__social-link">
-          <div class="c-footer__social-icon c-footer__social-icon--tw"/> 
+          <i class="fab fa-twitter"/>
         </a>
         </li>
         <li class="c-footer__social-item "><a 
           href="" 
-          class="c-footer__social-link"><div class="c-footer__social-icon c-footer__social-icon--fb"/></a></li>
+          class="c-footer__social-link"> <i class="fab fa-facebook-f"/></a></li>
         <li class="c-footer__social-item "><a 
           href="" 
-          class="c-footer__social-link"><div class="c-footer__social-icon c-footer__social-icon--skype"/></a></li>
+          class="c-footer__social-link"><i class="fab fa-skype"/></a></li>
         <li class="c-footer__social-item "><a 
           href="" 
-          class="c-footer__social-link"><div class="c-footer__social-icon c-footer__social-icon--be"/></a></li>
+          class="c-footer__social-link"><i class="fab fa-behance"/></a></li>
         <li class="c-footer__social-item "><a 
           href="" 
-          class="c-footer__social-link"><div class="c-footer__social-icon c-footer__social-icon--in"/></a></li>
+          class="c-footer__social-link"><i class="fab fa-linkedin-in"/></a></li>
       </ul>
     </div>
   </footer>
@@ -54,51 +54,21 @@ $medium-grey: #4e5a62;
     font-size: 1.4rem;
   }
 
-  &__social-icons {
-    position: relative;
+  &__social-item {
+    list-style: none;
   }
 
-  &__social-item {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    top: 0;
-
-    // &--tw {
-    //   background-image: url('~assets/images/icons.svg') 0 0;
-    //   left: 0;
-    //   width: 1.8rem;
-    // }
-
-    // &--fb {
-    //   background-image: url('~assets/images/icons.svg') -1.9rem 0;
-    //   left: 1.8rem;
-    //   width: 1.8rem;
-    // }
-
-    // &--skype {
-    //   background-image: url('~assets/images/icons.svg') -3.8rem 0;
-    //   left: 3.6rem;
-    //   width: 1.8rem;
-    // }
-
-    // &--be {
-    //   background-image: url('~assets/images/icons.svg') -5.7rem 0;
-    //   left: 5.4rem;
-    //   width: 1.8rem;
-    // }
-
-    &--in {
-      background-image: url('~assets/images/icons.svg');
-      left: 7.2rem;
-      width: 1.8rem;
-    }
+  &__social-icons {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__social-link {
-    height: 1.8rem;
+    font-size: 1.8rem;
     display: block;
+    color: white;
+    text-decoration: none;
   }
 }
 </style>

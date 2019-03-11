@@ -1,7 +1,7 @@
 <template>
-  <div class="c-about-wrapper">
-    <section class="c-about">
-      <h1 class="c-about__title">
+  <div class="c-section-wrapper">
+    <section class="c-about c-section">
+      <h1 class="c-section__title ">
         We are Modest
       </h1>
       <div class="c-about__content">
@@ -13,14 +13,41 @@
             Lorem ipsum dolor sit amet,<strong>consectetur adipiscing elit</strong> . Sed nisi metus, tristique ndolor non, ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue, vel sodales arcu vestibulum. Nunc lobortis dui magna, quis lacusullamcorper at. 
           </p>
           <div class="c-about__social">
-            <a 
-              href="" 
-              class="c-about__social-link">
-              <img 
-                src="" 
-                alt="" 
-                class="c-about__social-icon">
-            </a>
+            <div class="c-about__social-link-wrapper">
+              <a 
+                href="" 
+                class="c-about__social-link">
+                <i class="fab fa-facebook-f"/>
+              </a>
+            </div>
+            <div class="c-about__social-link-wrapper">
+              <a 
+                href="" 
+                class="c-about__social-link">
+                <i class="fab fa-twitter"/>
+              </a>
+            </div>
+            <div class="c-about__social-link-wrapper">
+              <a 
+                href="" 
+                class="c-about__social-link">
+                <i class="fab fa-google-plus-g"/>
+              </a>
+            </div>
+            <div class="c-about__social-link-wrapper">
+              <a 
+                href="" 
+                class="c-about__social-link">
+                <i class="fab fa-dribbble"/>
+              </a>
+            </div>
+            <div class="c-about__social-link-wrapper">
+              <a 
+                href="" 
+                class="c-about__social-link">
+                <i class="fab fa-behance"/>
+              </a>
+            </div>
           </div>
         </div>
         <div class="c-about__content-right c-article">
@@ -76,9 +103,7 @@
 </template>
 
 <style lang="scss" scoped>
-.c-about {
-  width: 80%;
-  margin: 4rem auto;
+.c-section {
   &__title {
     color: #292f36;
     font-size: 3.6rem;
@@ -88,6 +113,16 @@
     border-left: 1rem solid #e1e6ea;
     margin: 8rem 0;
   }
+}
+.c-section-wrapper {
+  width: 100%;
+  padding-bottom: 8rem;
+  border-bottom: 0.3rem solid #dde1e4;
+}
+.c-about {
+  width: 80%;
+
+  margin: 4rem auto;
 
   &__content {
     margin-bottom: 4rem;
@@ -106,7 +141,30 @@
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 2.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
+  }
+  &__social {
+    display: flex;
+  }
+  &__social-link-wrapper {
+    background: #c8cdd0;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #d0d5d9;
+      cursor: pointer;
+    }
+  }
+  &__social-link {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    // padding: 2rem;
   }
 }
 .c-article {
