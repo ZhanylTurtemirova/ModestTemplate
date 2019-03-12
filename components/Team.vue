@@ -4,11 +4,20 @@
       <h1 class="c-section__title">
         Meet the team.
       </h1>
+
       <div class="c-team__staff">
-        <div class="c-team__staff-member">
-          <div class = "c-team__staff-img">
-            <div class="c-team__staff-hover"> 
-              <div class="c-team__hover-bg"/>
+        <div 
+          v-for="person in stuff" 
+          :key="person" 
+          class="c-team__staff-member" >
+          <div 
+            class = "c-team__staff-img" 
+            @mouseover="mouseOver">
+            <div 
+              v-if="hover"
+              class="c-team__staff-hover"> 
+              <div 
+                class="c-team__hover-bg" />
               <div class="c-team__staff-links">
                 <div class="c-team__link-wrapper">
                   <a 
@@ -34,64 +43,16 @@
               </div>  
             </div>
             <img 
-              src="~/assets/images/pic1.jpg"  
+              src="~assets/images/pic1.jpg"
               alt="profile photo" 
               class ="c-team__img">
           </div>
           <div class="c-team__staff-info">
             <p class="c-team__staff-name">
-              Gloria Bromley
+              {{ person.name }}
             </p>
             <p class="c-team__staff-position">
-              CEO and Founder
-            </p>
-          </div>
-        </div>
-        <div class="c-team__staff-member">
-          <div class = "c-team__staff-img">
-            <img 
-              src="~/assets/images/pic2.jpg"  
-              alt="profile photo" 
-              class ="c-team__img">
-          </div>
-          <div class="c-team__staff-info">
-            <p class="c-team__staff-name">
-              Paul Torres
-            </p>
-            <p class="c-team__staff-position">
-              Head of Development
-            </p>
-          </div>
-        </div>
-        <div class="c-team__staff-member">
-          <div class = "c-team__staff-img">
-            <img 
-              src="~/assets/images/pic3.jpg"  
-              alt="profile photo" 
-              class ="c-team__img">
-          </div>
-          <div class="c-team__staff-info">
-            <p class="c-team__staff-name">
-              Judith Gillette
-            </p>
-            <p class="c-team__staff-position">
-              Graphic Desinger
-            </p>
-          </div>
-        </div>
-        <div class="c-team__staff-member">
-          <div class = "c-team__staff-img">
-            <img 
-              src="~/assets/images/pic4.jpg"  
-              alt="profile photo" 
-              class ="c-team__img">
-          </div>
-          <div class="c-team__staff-info">
-            <p class="c-team__staff-name">
-              Delores Reed
-            </p>
-            <p class="c-team__staff-position">
-              Client Service Director
+              {{ person.position }}
             </p>
           </div>
         </div>
@@ -136,9 +97,6 @@
       & .c-team__staff-position {
         color: white;
       }
-      & .c-team__hover-bg {
-        height: 30rem;
-      }
     }
   }
 
@@ -181,10 +139,9 @@
     top: 0;
     right: 0;
     width: 100%;
-    max-height: 0;
+    height: 0;
     background-color: #ffffff;
     opacity: 0.4;
-    transition: height 2s;
   }
 
   &__staff-links {
@@ -214,5 +171,50 @@
     font-size: 2.8rem;
     color: white;
   }
+  &__staff-hover {
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      hover: false,
+      stuff: {
+        person1: {
+          name: 'Gloria Bromley',
+          position: 'CEO and Founder',
+          imgPath: '/_nuxt/assets/images/pic1.jpg'
+        },
+        person2: {
+          name: 'Paul Torres',
+          position: ' Head of Development',
+          imgPath: '~assets/images/pic2.jpg'
+        },
+        person3: {
+          name: 'Judith Gillette',
+          position: 'Graphic Desinger',
+          imgPath: 'assets/images/pic3.jpg'
+        },
+        person4: {
+          name: 'Delores Reed',
+          position: 'Client Service Director',
+          imgPath: 'assets/images/pic4.jpg'
+        }
+      }
+    }
+  },
+  methods: {
+    mouseOver: {
+      function() {
+        this.hover == true
+      }
+    }
+  }
+}
+</script>
