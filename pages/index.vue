@@ -3,6 +3,7 @@
     <banner/>
     <about/>
     <team/>
+    <work/>
   </div> 
 </template>
 
@@ -10,12 +11,14 @@
 import Banner from '~/components/Banner.vue'
 import About from '~/components/About.vue'
 import Team from '~/components/Team.vue'
+import Work from '~/components/Work.vue'
 
 export default {
   components: {
     banner: Banner,
     about: About,
-    team: Team
+    team: Team,
+    work: Work
   }
 }
 </script>
