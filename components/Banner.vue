@@ -187,7 +187,6 @@ export default {
   },
   methods: {
     currentSlide(slide) {
-      console.log('slide')
       this.curSlide = slide
     },
     showMore() {

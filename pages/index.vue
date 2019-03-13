@@ -4,6 +4,7 @@
     <about/>
     <team/>
     <work/>
+    <services/>
   </div> 
 </template>
 
@@ -12,13 +13,15 @@ import Banner from '~/components/Banner.vue'
 import About from '~/components/About.vue'
 import Team from '~/components/Team.vue'
 import Work from '~/components/Work.vue'
+import Services from '~/components/Services.vue'
 
 export default {
   components: {
     banner: Banner,
     about: About,
     team: Team,
-    work: Work
+    work: Work,
+    services: Services
   }
 }
 </script>
@@ -33,8 +36,7 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
